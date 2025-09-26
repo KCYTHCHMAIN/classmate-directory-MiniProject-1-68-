@@ -1,0 +1,165 @@
+# Classmate Directory MiniProject 1-68
+
+## คำอธิบายโปรเจกต์
+
+**Classmate Directory MiniProject 1-68** คือโปรเจกต์ React ที่สร้างขึ้นเพื่อเป็นสมุดรายชื่อเพื่อนร่วมชั้นในรูปแบบเว็บแอปพลิเคชันสมัยใหม่ โดยเน้นการออกแบบ UI ที่สวยงาม ใช้งานง่าย และตอบสนองได้ดีบนทุกอุปกรณ์ (responsive) พร้อมทั้งใช้เทคโนโลยี Tailwind CSS สำหรับการตกแต่งและจัดการสไตล์อย่างมีประสิทธิภาพ
+
+แอปนี้แสดงรายชื่อเพื่อนแต่ละคนในรูปแบบการ์ด (Card) พร้อมข้อมูลสำคัญ เช่น ชื่อ-นามสกุล รูปโปรไฟล์ น้ำหนัก ส่วนสูง อีเมล เบอร์โทรศัพท์ และคำคมประจำตัว เมื่อคลิกที่การ์ดจะมี Modal แสดงรายละเอียดเพิ่มเติมของเพื่อนคนนั้น
+
+---
+
+## ฟีเจอร์หลัก
+
+- แสดงรายชื่อเพื่อนร่วมชั้นในรูปแบบ Card Grid
+- คลิกที่การ์ดเพื่อดูรายละเอียดใน Modal แบบสวยงาม
+- Responsive Design รองรับทั้งมือถือ แท็บเล็ต และเดสก์ท็อป
+- ใช้ Tailwind CSS ในการตกแต่ง UI
+- โค้ดแบ่งเป็นคอมโพเนนต์ย่อยเพื่อความเป็นระเบียบและขยายต่อได้ง่าย
+- มีระบบแอนิเมชันและเอฟเฟกต์ (เช่น hover, modal, pulse, glow ฯลฯ)
+- รองรับการเข้าถึง (Accessibility) เช่น การโฟกัส, ปิด Modal ด้วยปุ่ม Escape
+
+---
+
+## โครงสร้างโปรเจกต์
+classmate-directory-MiniProject-1-68/
+├── .gitignore
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── README.md
+│
+├── public/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+│
+└── src/
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    ├── reportWebVitals.js
+    ├── setupTests.js
+    │
+    └── components/
+        ├── ClassmateCard.js
+        ├── ClassmateModal.js
+        ├── HeaderIcon.js
+        ├── HeaderSection.js
+        └── Icons.js
+
+
+
+---
+
+## คำอธิบายไฟล์และโฟลเดอร์สำคัญ
+
+### Root Directory
+
+- **package.json**  
+  กำหนด dependencies, scripts, และ metadata ของโปรเจกต์
+
+- **postcss.config.js**  
+  ตั้งค่า PostCSS ให้ทำงานร่วมกับ Tailwind CSS และ Autoprefixer
+
+- **tailwind.config.js**  
+  กำหนดคอนฟิกของ Tailwind CSS เช่น custom theme, animation, background, ฯลฯ
+
+- **README.md**  
+  คู่มือและรายละเอียดโปรเจกต์
+
+### public/
+
+- **index.html**  
+  HTML Template หลักของ React App
+
+- **favicon.ico, logo192.png, logo512.png**  
+  ไอคอนและโลโก้สำหรับแอป
+
+- **manifest.json**  
+  ข้อมูลสำหรับ Progressive Web App
+
+- **robots.txt**  
+  ไฟล์สำหรับควบคุมการเข้าถึงของ web crawler
+
+### src/
+
+- **App.js**  
+  คอมโพเนนต์หลักของแอป รวมและควบคุมการแสดงผลคอมโพเนนต์ย่อย
+
+- **App.css**  
+  สไตล์พื้นฐาน (ส่วนใหญ่ไม่ได้ใช้งานจริงเพราะใช้ Tailwind)
+
+- **index.js**  
+  จุดเริ่มต้นของแอป (entry point) สำหรับ ReactDOM
+
+- **index.css**  
+  นำเข้า Tailwind CSS และกำหนด base style
+
+- **reportWebVitals.js**  
+  ฟังก์ชันวัดประสิทธิภาพ (optional)
+
+- **setupTests.js**  
+  ตั้งค่าสำหรับ Jest และ React Testing Library
+
+#### src/components/
+
+- **ClassmateCard.js**  
+  คอมโพเนนต์แสดงการ์ดข้อมูลเพื่อนแต่ละคน
+
+- **ClassmateModal.js**  
+  คอมโพเนนต์ Modal แสดงรายละเอียดเพื่อนเมื่อคลิกการ์ด
+
+- **HeaderIcon.js**  
+  SVG ไอคอนสมุดนักเรียน ใช้ประกอบหัวเรื่องและการ์ด
+
+- **HeaderSection.js**  
+  ส่วนหัวของหน้า (Project Title + Subtitle)
+
+- **Icons.js**  
+  SVG ไอคอนขนาดเล็ก เช่น น้ำหนัก ส่วนสูง อีเมล เบอร์โทร คำคม
+
+---
+
+## เทคโนโลยีและส่วนเสริมที่ใช้
+
+### React
+
+- ใช้ React 19+ (ฟังก์ชันคอมโพเนนต์, useState, useEffect)
+- ReactDOM สำหรับเรนเดอร์แอป
+
+### Tailwind CSS
+
+- Utility-first CSS framework
+- Custom theme, animation, background, shadow ฯลฯ
+- ใช้ร่วมกับ PostCSS และ Autoprefixer
+
+### PostCSS & Autoprefixer
+
+- PostCSS: ประมวลผล CSS
+- Autoprefixer: เพิ่ม vendor prefixes อัตโนมัติ
+
+### React Scripts
+
+- ใช้ `react-scripts` สำหรับ build, start, test, eject
+
+### React Testing Library & Jest
+
+- สำหรับเขียนและรันทดสอบยูนิต
+
+### Web Vitals
+
+- สำหรับวัด performance (optional)
+
+---
+
+## วิธีติดตั้งและใช้งาน
+
+1. **ติดตั้ง dependencies**
+   ```sh
+   npm install

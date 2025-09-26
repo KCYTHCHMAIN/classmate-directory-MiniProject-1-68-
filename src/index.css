@@ -1,0 +1,16 @@
+﻿/* กำหนดการใช้งานยูทิลิตีหลักของ Tailwind สำหรับทั้งโปรเจกต์ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* สีพื้นหลังและฟอนต์หลักของทั้งหน้า */
+  body {
+    @apply bg-gradient-to-br from-slate-100 via-white to-rose-50 font-sans text-slate-900;
+  }
+
+  /* สีที่ใช้เมื่อมีการเลือกข้อความ */
+  ::selection {
+    @apply bg-rose-200 text-slate-900;
+  }
+}
